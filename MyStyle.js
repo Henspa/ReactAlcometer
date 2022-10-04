@@ -53,26 +53,21 @@ export const BasicTheme = StyleSheet.create({
         fontWeight: 'bold',
         color: '#990099',
     },
-    result: {
-        //color: '#134d00',
+    mySelectedButton: '#990099',
+    allResults: {
         marginTop: 10,
         marginBottom: 20,
         fontSize: 50,
         fontWeight: 'bold',
+    },
+    result: {
+        color: 'green',
     },
     result2: {
-        //color: '#4d3900',
-        marginTop: 10,
-        marginBottom: 20,
-        fontSize: 50,
-        fontWeight: 'bold',
+        color: 'yellow',
     },
     result3: {
-        //color: '#4d1300',
-        marginTop: 10,
-        marginBottom: 20,
-        fontSize: 50,
-        fontWeight: 'bold',
+        color: 'red',
     },
     button: {
         backgroundColor: '#990099',
@@ -111,6 +106,7 @@ export const FancyTheme = StyleSheet.create({
         ...BasicTheme.input,
         backgroundColor: 'lightgray',
     },
+    myInputStyleRounded: true,
     myInputColor: '#990099',
     myInputColor2: {
         ...BasicTheme.myInputColor2,
@@ -123,6 +119,10 @@ export const FancyTheme = StyleSheet.create({
     },
     myLabelStyle: {
         ...BasicTheme.myLabelStyle,
+    },
+    mySelectedButton: '#990099',
+    allResults: {
+        ...BasicTheme.allResults,
     },
     result: {
         ...BasicTheme.result,

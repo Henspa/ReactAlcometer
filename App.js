@@ -49,8 +49,6 @@ export default function App() {
 
     let result = 0;
 
-    //let color;
-
     if (gender === 'female') {
       result = grams_l / (weight * 0.6)
     } 
@@ -58,18 +56,16 @@ export default function App() {
       result = grams_l / (weight * 0.7)
     }
 
-    if (result < 0.00 ) {
-      /* color = '#134d00'; */
-      setAlcolevel(0);
+    if (result <= 0.00) { 
+      setAlcolevel(<Text style={theme.result}>{0}</Text>);
     }
-    else if (result > 0.00 && result < 0.15 ) {
-      /* color = 'yellow'; */
-      setAlcolevel(result);
+    else if (result > 0.01 && result < 0.15) {
+      setAlcolevel(<Text style={theme.result2}>{result.toFixed(2)}</Text>);
     }
     else {
-      /* color = 'red'; */
-      setAlcolevel(result);
-    }
+      setAlcolevel(<Text style={theme.result3}>{result.toFixed(2)}</Text>);
+    } 
+
   }
 
   return (
@@ -126,11 +122,12 @@ export default function App() {
         radio_props={genders}
         initial={0}
         onPress={(value) =>{setGender(value)}}
+        selectedButtonColor={theme.mySelectedButton}
         buttonColor={theme.myRadioColor}
         labelStyle={theme.myLabelStyle}
         ></RadioForm>
-      <Text style={theme.result} >
-        {alcolevel.toFixed(2)}</Text>  
+      <Text style={theme.allResults}>
+        {alcolevel}</Text> 
       </View>
       <Pressable style={theme.button}
         onPress={ () => calculate()} >
